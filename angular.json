@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "broccoli-app"
+    }
+  },
+  "defaultProject": "broccoli-app",
+  "cli": {
+    "analytics": false
+  }
 }
