@@ -1,0 +1,26 @@
+<p>ingredients-form works!</p>
+<form formGroup="ingredientsForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="name">
+      Ingredients Name
+    </label>
+    <input id="name" type="text" formControlName="name" ngModel="ingredientsName">
+  </div>
+
+  <div>
+    <label for="unit">
+      Unit
+    </label>
+    <input id="unit" type="text" formControlName="unit" ngModel="unit">
+  </div>
+
+  <div>
+    <label for="qty">
+      Quantity
+    </label>
+    <input id="qty" type="text" formControlName="qty" ngModel="unit">
+  </div>
+  <button class="button" type="submit">Add Ingredients</button>
+
+</form>
