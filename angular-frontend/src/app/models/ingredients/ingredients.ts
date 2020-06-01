@@ -1,12 +1,12 @@
 export class Ingredients {
   ingredientsName: string;
   unit: string;
-  qty: number;
+  category: string;
 
-  constructor(ingredientsName: string, unit: string, qty: number){
+  constructor(ingredientsName: string, unit: string, category: string){
     this.ingredientsName = ingredientsName;
     this.unit = unit;
-    this.qty = qty;
+    this.category = category;
   }
 
 }

@@ -1,0 +1,36 @@
+<h2>Ingredients</h2>
+
+
+
+
+<!--<form formGroup="ingredientsForm" (ngSubmit)="onSubmit()">-->
+
+<!--  <div>-->
+<!--    <label for="name">-->
+<!--      Ingredients Name-->
+<!--    </label>-->
+<!--    <input id="name" type="text" formControlName="name" ngModel="ingredientsName">-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <label for="unit">-->
+<!--      Unit-->
+<!--    </label>-->
+<!--    <input id="unit" type="text" formControlName="unit" ngModel="unit">-->
+<!--  </div>-->
+
+<!--  <div>-->
+<!--    <label for="qty">-->
+<!--      Category-->
+<!--    </label>-->
+<!--    <input id="qty" type="text" formControlName="qty" ngModel="unit">-->
+<!--  </div>-->
+<!--  <button class="button" type="submit">Add Ingredients</button>-->
+
+<!--</form>-->
+
+<ul>
+  <li *ngFor="let ingredient of ingredients">
+    Name:{{ingredient.ingredientsName}}, Category:{{ingredient.category}}
+  </li>
+</ul>
