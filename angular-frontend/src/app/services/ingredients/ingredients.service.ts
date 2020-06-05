@@ -14,4 +14,9 @@ export class IngredientsService {
     return of(INGREDIENTS);
   }
 
+  addIngredient(ingredient: Ingredients): void {
+    console.log(ingredient);
+    INGREDIENTS.push(ingredient);
+  }
+
 }

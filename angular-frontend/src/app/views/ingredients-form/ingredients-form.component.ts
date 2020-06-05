@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import {FormGroup, FormControl, Validators} from '@angular/forms';
 import { IngredientsService} from '../../services/ingredients/ingredients.service';
 import { Ingredients} from '../../models/ingredients/ingredients';
 
@@ -10,31 +10,31 @@ import { Ingredients} from '../../models/ingredients/ingredients';
 })
 export class IngredientsFormComponent implements OnInit {
 
+  ingredient: Ingredients;
   ingredientsForm;
-  ingredients: Ingredients[];
+
+  ingredientsNameFormControl = new FormControl('', Validators.required);
+  unitFormControl = new FormControl('', Validators.required);
+  categoryFormControl = new FormControl('', Validators.required);
 
   constructor(
-    private formBuilder: FormBuilder,
     private ingredientsService: IngredientsService
   ) {
-    this.ingredientsForm = this.formBuilder.group({
-      ingredientsName: '',
-      unit: '',
-      category: 0
+    this.ingredientsForm = new FormGroup({
+      ingredientsName: this.ingredientsNameFormControl,
+      unit: this.unitFormControl,
+      category: this.categoryFormControl
     });
   }
 
   ngOnInit(): void {
-    this.getIngredients();
   }
-
-  getIngredients(): void {
-    this.ingredientsService.getIngredients().subscribe(ingredients => this.ingredients = ingredients);
-    console.log(this.ingredients[0].ingredientsName);
+  onSubmit(): void{
+    this.addIngredient();
   }
-  onSubmit(){
+  addIngredient(): void{
 
+    this.ingredient = new Ingredients(this.ingredientsNameFormControl.value, this.unitFormControl.value, this.categoryFormControl.value);
+    this.ingredientsService.addIngredient(this.ingredient);
   }
-
-
 }
