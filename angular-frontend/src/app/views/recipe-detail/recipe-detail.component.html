@@ -1,0 +1,11 @@
+<h2> Ingredients for each Recipe</h2>
+
+<div *ngFor="let recipe of recipes">
+  <div>Ingredients for {{recipe.recipeName}}</div>
+
+  <ul>
+    <li *ngFor="let ingredient of recipe.ingredientsList">
+      Name:{{ingredient.ingredient.ingredientsName}}, Category:{{ingredient.ingredient.category}}, Qty: {{ingredient.qty}}
+    </li>
+  </ul>
+</div>
