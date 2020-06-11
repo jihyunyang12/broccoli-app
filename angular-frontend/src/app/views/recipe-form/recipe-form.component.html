@@ -1,0 +1,30 @@
+
+<h2>Add a new recipe</h2>
+
+<form [formGroup]="recipeForm">
+
+    <label for="recipeName">
+        Recipe Name:
+    </label>
+    <input formControlName="recipeName" />
+  
+    <ng-container formArrayName="ingredientsListForm">
+        <button (click)="addIngredientsListForm()"> Add an ingredient </button>
+        <div *ngFor="let _ of ingredientsListForm.controls; index as i">
+            <ng-container [formGroupName]="i">
+                Select an ingredient:
+                <mat-form-field>
+                    <mat-select matNativeControl  formControlName="ingredientsName" name="ingredientsName">
+                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient.ingredientsName">
+                        {{ingredient.ingredientsName}}
+                      </mat-option> 
+                    </mat-select>
+                </mat-form-field>
+                <label for="qty">
+                    Quantity:
+                </label>
+                <input formControlName="qty" />
+            </ng-container>
+        </div>
+    </ng-container>
+  </form>

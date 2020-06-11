@@ -31,10 +31,11 @@ export class IngredientsFormComponent implements OnInit {
   }
   onSubmit(): void{
     this.addIngredient();
+    console.log(this.ingredientsForm.value.ingredientsName);
   }
   addIngredient(): void{
 
-    this.ingredient = new Ingredients(this.ingredientsNameFormControl.value, this.unitFormControl.value, this.categoryFormControl.value);
+    this.ingredient = this.ingredientsForm.value;
     this.ingredientsService.addIngredient(this.ingredient);
   }
 }
