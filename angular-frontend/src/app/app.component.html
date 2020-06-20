@@ -1,4 +1,26 @@
-<app-ingredients-list></app-ingredients-list>
+
+<h1>Broccoli - Grocery list app</h1>
+<!-- <app-ingredients-list></app-ingredients-list>
 <app-ingredients-form></app-ingredients-form>
 <app-recipe-detail></app-recipe-detail>
-<app-recipe-form></app-recipe-form>
+<app-recipe-form></app-recipe-form> -->
+
+<!-- <nav>
+    <ul>
+      <li><a routerLink="/ingredients">Ingredients</a></li>
+      <li><a routerLink="/recipe">Recipes</a></li>
+    </ul>
+  </nav>
+  
+  <router-outlet></router-outlet> -->
+
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="rla.isActive">
+    {{link.label}}
+    </a>
+</nav>
+<router-outlet></router-outlet>
