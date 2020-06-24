@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipe } from 'src/app/models/recipe/recipe';
+import { Recipe } from '../../models/recipe/recipe';
 import { FormControl, Validators, FormGroup, FormArray } from '@angular/forms';
-import { IngredientsItem } from 'src/app/models/ingredients-item/ingredients-item';
-import { Ingredients } from 'src/app/models/ingredients/ingredients';
-import { IngredientsService } from 'src/app/services/ingredients/ingredients.service';
+import { IngredientsItem } from '../..//models/ingredients-item/ingredients-item';
+import { Ingredients } from '../../models/ingredients/ingredients';
+import { IngredientsService } from '../../services/ingredients/ingredients.service';
 
 
 @Component({

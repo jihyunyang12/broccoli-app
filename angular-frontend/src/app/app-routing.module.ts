@@ -4,13 +4,16 @@ import { RecipeDetailComponent } from './views/recipe-detail/recipe-detail.compo
 import { IngredientsListComponent } from './views/ingredients-list/ingredients-list.component';
 import { IngredientsFormComponent } from './views/ingredients-form/ingredients-form.component';
 import { RecipeFormComponent } from './views/recipe-form/recipe-form.component';
+import { RecipeCardComponent } from './views/recipe-card/recipe-card.component';
 
 
 const routes: Routes = [
   { path: 'ingredients', component: IngredientsListComponent },
-  { path: 'recipe', component: RecipeDetailComponent },
+  { path: 'recipe', component: RecipeCardComponent },
+  { path: 'recipe/:id', component: RecipeDetailComponent },
   { path: 'ingredients/ingredientsForm', component: IngredientsFormComponent },
-  { path: 'recipe/recipeForm', component: RecipeFormComponent}
+  { path: 'recipe/recipeForm', component: RecipeFormComponent},
+
 ];
 
 @NgModule({

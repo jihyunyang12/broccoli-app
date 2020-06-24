@@ -1,6 +1,6 @@
-<h2> Ingredients for each Recipe</h2>
 
-<div *ngFor="let recipe of recipes">
+<!-- <div *ngFor="let recipe of recipes"> -->
+<div *ngIf="recipe$ | async as recipe">
   <div>Ingredients for {{recipe.recipeName}}</div>
 
   <ul>

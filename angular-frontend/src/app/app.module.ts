@@ -12,6 +12,11 @@ import { IngredientsListComponent } from './views/ingredients-list/ingredients-l
 import { RecipeDetailComponent } from './views/recipe-detail/recipe-detail.component';
 import { RecipeFormComponent } from './views/recipe-form/recipe-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RecipeCardComponent } from './views/recipe-card/recipe-card.component';
+import { FlexLayoutModule } from "@angular/flex-layout";
+import { MatCardModule } from "@angular/material/card";
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatButtonModule, MatButton } from "@angular/material/button";
 
 @NgModule({
   declarations: [
@@ -19,7 +24,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     IngredientsFormComponent,
     IngredientsListComponent,
     RecipeDetailComponent,
-    RecipeFormComponent
+    RecipeFormComponent,
+    RecipeCardComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +36,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatSelectModule,
     MatInputModule,
     MatFormFieldModule,
-    MatTabsModule
+    MatTabsModule,
+    FlexLayoutModule,
+    MatCardModule,
+    MatToolbarModule,
+    MatButtonModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]

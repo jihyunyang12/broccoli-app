@@ -1,0 +1,13 @@
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let recipe of recipes">
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-content [routerLink]="['/recipe', recipe.id]">
+          {{recipe.recipeName}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Edit</button>
+          <button mat-button>Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

@@ -27,6 +27,6 @@ export const INGREDIENTSLIST2: IngredientsItem[] = [
 ]
 
 export const RECIPES: Recipe[] = [
-  {recipeName: 'Curry', ingredientsList: INGREDIENTSLIST1 },
-  {recipeName: 'Shrimp Pasta', ingredientsList: INGREDIENTSLIST2}
+  {id: 1, recipeName: 'Curry', ingredientsList: INGREDIENTSLIST1 },
+  {id: 2, recipeName: 'Shrimp Pasta', ingredientsList: INGREDIENTSLIST2}
 ]
