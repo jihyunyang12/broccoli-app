@@ -9,10 +9,11 @@ import { RecipeCardComponent } from './views/recipe-card/recipe-card.component';
 
 const routes: Routes = [
   { path: 'ingredients', component: IngredientsListComponent },
-  { path: 'recipe', component: RecipeCardComponent },
-  { path: 'recipe/:id', component: RecipeDetailComponent },
-  { path: 'ingredients/ingredientsForm', component: IngredientsFormComponent },
   { path: 'recipe/recipeForm', component: RecipeFormComponent},
+  { path: 'recipe/:id', component: RecipeDetailComponent },
+  { path: 'recipe', component: RecipeCardComponent },
+  { path: 'ingredients/ingredientsForm', component: IngredientsFormComponent }
+  
 
 ];
 

@@ -23,4 +23,15 @@ export class RecipeService {
     );
   }
 
+  addRecipe(recipe: Recipe): void {
+    
+    recipe.id = this.getRecipeID(RECIPES);
+    RECIPES.push(recipe);
+    console.log(RECIPES);
+  }
+
+  getRecipeID(RECIPES): number {
+    return RECIPES.length+1;
+  }
+
 }

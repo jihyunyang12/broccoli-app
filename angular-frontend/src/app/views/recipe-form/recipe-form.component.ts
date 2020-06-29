@@ -4,7 +4,7 @@ import { FormControl, Validators, FormGroup, FormArray } from '@angular/forms';
 import { IngredientsItem } from '../..//models/ingredients-item/ingredients-item';
 import { Ingredients } from '../../models/ingredients/ingredients';
 import { IngredientsService } from '../../services/ingredients/ingredients.service';
-
+import { RecipeService } from '../../services/recipe/recipe.service';
 
 @Component({
   selector: 'app-recipe-form',
@@ -16,35 +16,51 @@ export class RecipeFormComponent implements OnInit {
   recipe: Recipe;
 
   recipeForm;
-  ingredientsListForm;
-  
+  ingredientsList;
+  //ingredientsList: IngredientsItem[];
   ingredients : Ingredients[];
 
-  constructor(private ingredientsService: IngredientsService) { }
+  constructor(private ingredientsService: IngredientsService, private recipeService: RecipeService) {
 
-  ngOnInit(): void {
     this.recipeForm = new FormGroup({
       recipeName: new FormControl(''),
-      ingredientsListForm: new FormArray([
+      ingredientsList: new FormArray([
         new FormGroup({
-          ingredientsName: new FormControl(''),
+          ingredient: new FormControl(''),
           qty: new FormControl('')
         })
       ])
     });
-  
-    this.ingredientsListForm = this.recipeForm.get('ingredientsListForm') as FormArray;
+
+  }
+
+  ngOnInit(): void {
+
+    this.ingredientsList = this.recipeForm.get('ingredientsList') as FormArray;
     this.getIngredients();
   }
 
-  addIngredientsListForm() {
-    const ingredientsName = new FormControl('');
+  addingredientsList() {
+    const ingredient = new FormControl('');
     const qty = new FormControl('');
-    const group = new FormGroup({ingredientsName, qty});
-    this.ingredientsListForm.push(group);
+    const group = new FormGroup({ingredient, qty});
+    this.ingredientsList.push(group);
   }
 
   getIngredients(): void {
     this.ingredientsService.getIngredients().subscribe(ingredients => this.ingredients = ingredients);
+  }
+
+  onSubmit(): void{
+    console.log("add recipe submit")
+    this.addRecipe();
+    console.log(this.recipeForm.value.recipeName);
+  }
+  addRecipe(): void{
+
+    this.recipe = this.recipeForm.value;
+    
+
+    this.recipeService.addRecipe(this.recipe);
   }
 }

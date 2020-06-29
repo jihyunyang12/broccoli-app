@@ -1,7 +1,7 @@
 
 <h2>Add a new ingredient</h2>
 
-<form [formGroup]="ingredientsForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="ingredientsForm">
 
   <div>
     <label for="name">
@@ -23,7 +23,7 @@
     </label>
     <input id="category" type="text" formControlName="category">
   </div>
-  <button class="button" type="submit">Add Ingredients</button>
+  <button mat-raised-button class="button" type="button" (click)="onSubmit()" routerLink="/ingredients" >Add Ingredients</button>
 
 </form>
 

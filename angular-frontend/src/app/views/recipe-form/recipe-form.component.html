@@ -1,5 +1,5 @@
 
-<h2>Add a new recipe</h2>
+<h2>Add a new recipe !</h2>
 
 <form [formGroup]="recipeForm">
 
@@ -8,14 +8,14 @@
     </label>
     <input formControlName="recipeName" />
   
-    <ng-container formArrayName="ingredientsListForm">
-        <button (click)="addIngredientsListForm()"> Add an ingredient </button>
-        <div *ngFor="let _ of ingredientsListForm.controls; index as i">
+    <ng-container formArrayName="ingredientsList">
+        <button mat-raised-button (click)="addingredientsList()"> Add an ingredient </button>
+        <div *ngFor="let _ of ingredientsList.controls; index as i">
             <ng-container [formGroupName]="i">
                 Select an ingredient:
                 <mat-form-field>
-                    <mat-select matNativeControl  formControlName="ingredientsName" name="ingredientsName">
-                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient.ingredientsName">
+                    <mat-select matNativeControl  formControlName="ingredient" name="ingredient">
+                      <mat-option *ngFor="let ingredient of ingredients" [value]="ingredient">
                         {{ingredient.ingredientsName}}
                       </mat-option> 
                     </mat-select>
@@ -27,4 +27,6 @@
             </ng-container>
         </div>
     </ng-container>
-  </form>
+
+    <button mat-raised-button type="button" (click) ="onSubmit()" routerLink="/recipe" >Add Recipe</button>
+</form>
