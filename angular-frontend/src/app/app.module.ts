@@ -17,6 +17,7 @@ import { FlexLayoutModule } from "@angular/flex-layout";
 import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule, MatButton } from "@angular/material/button";
+import { IngredientsCardComponent } from './views/ingredients-card/ingredients-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { MatButtonModule, MatButton } from "@angular/material/button";
     IngredientsListComponent,
     RecipeDetailComponent,
     RecipeFormComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    IngredientsCardComponent
   ],
   imports: [
     BrowserModule,

@@ -17,13 +17,7 @@
     <input id="unit" type="text" formControlName="unit">
   </div>
 
-  <div>
-    <label for="category">
-      Category:
-    </label>
-    <input id="category" type="text" formControlName="category">
-  </div>
-  <button mat-raised-button class="button" type="button" (click)="onSubmit()" routerLink="/ingredients" >Add Ingredients</button>
+  <button mat-raised-button class="button" type="button" (click)="onSubmit()" [routerLink]="['/ingredientsGroup', ingredientsGroupId]" >Add Ingredients</button>
 
 </form>
 

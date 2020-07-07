@@ -1,0 +1,17 @@
+<!-- <nav>
+    <button mat-raised-button type="button" routerLink="/ingredients/ingredientsForm">Add a new ingredient</button>
+</nav> -->
+
+<div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+    <div fxFlex="25%" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let ingredientsGroup of ingredientsGroups">
+      <mat-card class="mat-elevation-z4" >
+        <mat-card-content [routerLink]="['/ingredientsGroup', ingredientsGroup.id]">
+          {{ingredientsGroup.name}}
+        </mat-card-content>
+        <mat-card-actions>
+          <button mat-button>Edit</button>
+          <button mat-button>Delete</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>

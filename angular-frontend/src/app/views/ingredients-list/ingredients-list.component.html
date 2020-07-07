@@ -1,11 +1,28 @@
 <h2>Ingredients</h2>
 
-<ul>
+<!-- <ul>
   <li *ngFor="let ingredient of ingredients">
-    Name:{{ingredient.ingredientsName}}, Category:{{ingredient.category}}
+    Name:{{ingredient.ingredientsName}}, Unit:{{ingredient.unit}}
   </li>
-</ul>
+</ul> -->
 
-<button mat-raised-button type="button" routerLink="/ingredients/ingredientsForm">Add a new ingredient</button>
+<!-- <button mat-raised-button type="button" routerLink="/ingredients/ingredientsForm">Add a new ingredient</button>
 
-<router-outlet></router-outlet>
+<router-outlet></router-outlet> -->
+
+
+
+<div *ngIf="ingredientsgroup$ | async as ingredientsgroup">
+
+  <nav>
+    <button mat-raised-button type="button" [routerLink]="['/ingredientsGroup', ingredientsgroup.id, 'ingredientsForm']" >Add a new ingredient</button>
+  </nav>
+
+  <div>{{ingredientsgroup.name}}</div>
+
+  <ul>
+    <li *ngFor="let ingredient of ingredientsgroup.ingredients">
+      Name:{{ingredient.ingredientsName}}, Unit:{{ingredient.unit}}
+    </li>
+  </ul>
+</div>
