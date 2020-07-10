@@ -18,6 +18,7 @@ import { MatCardModule } from "@angular/material/card";
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { MatButtonModule, MatButton } from "@angular/material/button";
 import { IngredientsCardComponent } from './views/ingredients-card/ingredients-card.component';
+import { IngredientsGroupFormComponent } from './views/ingredients-group-form/ingredients-group-form.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { IngredientsCardComponent } from './views/ingredients-card/ingredients-c
     RecipeDetailComponent,
     RecipeFormComponent,
     RecipeCardComponent,
-    IngredientsCardComponent
+    IngredientsCardComponent,
+    IngredientsGroupFormComponent
   ],
   imports: [
     BrowserModule,

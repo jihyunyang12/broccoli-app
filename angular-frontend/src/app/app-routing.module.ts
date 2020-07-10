@@ -6,6 +6,7 @@ import { IngredientsFormComponent } from './views/ingredients-form/ingredients-f
 import { RecipeFormComponent } from './views/recipe-form/recipe-form.component';
 import { RecipeCardComponent } from './views/recipe-card/recipe-card.component';
 import { IngredientsCardComponent } from './views/ingredients-card/ingredients-card.component';
+import { IngredientsGroupFormComponent } from './views/ingredients-group-form/ingredients-group-form.component';
 
 
 const routes: Routes = [
@@ -14,9 +15,9 @@ const routes: Routes = [
   { path: 'recipe/recipeForm', component: RecipeFormComponent},
   { path: 'recipe/:id', component: RecipeDetailComponent },
   { path: 'recipe', component: RecipeCardComponent },
-  { path: 'ingredientsGroup/:id/ingredientsForm', component: IngredientsFormComponent }
+  { path: 'ingredientsGroup/:id/ingredientsForm', component: IngredientsFormComponent },
+  { path: 'ingredients/ingredientsGroupForm', component: IngredientsGroupFormComponent}
   
-
 ];
 
 @NgModule({

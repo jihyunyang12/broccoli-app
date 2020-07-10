@@ -30,7 +30,7 @@ export class RecipeService {
     console.log(RECIPES);
   }
 
-  getRecipeID(RECIPES): number {
+  getRecipeID(RECIPES: Recipe[]): number {
     return RECIPES.length+1;
   }
 

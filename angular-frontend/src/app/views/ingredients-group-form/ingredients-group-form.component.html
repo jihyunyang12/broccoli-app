@@ -1,0 +1,15 @@
+
+<h2>Add a new ingredient</h2>
+
+<form [formGroup]="ingredientsGroupForm">
+
+  <div>
+    <label for="name">
+      Ingredient Category Name:
+    </label>
+    <input id="name" type="text" formControlName="name">
+  </div>
+
+  <button mat-raised-button class="button" type="button" (click)="onSubmit()" [routerLink]="['/ingredients']" >Add Ingredients Category</button>
+
+</form>

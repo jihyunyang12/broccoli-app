@@ -10,6 +10,9 @@ import { map } from 'rxjs/operators';
 })
 export class IngredientsService {
 
+  ingredients: Ingredients[] = [];
+
+
   constructor() { }
 
   getIngredients(): Observable<Ingredients[]> {
@@ -33,4 +36,15 @@ export class IngredientsService {
     INGREDIENTSGROUPS[ingredientsGroupId-1].ingredients.push(ingredient);
   }
 
+  addIngredientsGroup(ingredientsGroup: IngredientsGroup): void {
+    ingredientsGroup.id = this.getIngredientsGroupID(INGREDIENTSGROUPS);
+    ingredientsGroup.ingredients = this.ingredients;
+    console.log(ingredientsGroup);
+    INGREDIENTSGROUPS.push(ingredientsGroup);
+    console.log('!!', INGREDIENTSGROUPS);
+  }
+
+  getIngredientsGroupID(INGREDIENTSGROUPS: IngredientsGroup[]): number {
+    return INGREDIENTSGROUPS.length+1;
+  }
 }
