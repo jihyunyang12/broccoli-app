@@ -4,8 +4,13 @@
   <div>Ingredients for {{recipe.recipeName}}</div>
 
   <ul>
-    <li *ngFor="let ingredient of recipe.ingredientsList">
-      Name:{{ingredient.ingredient.ingredientsName}}, Category:{{ingredient.ingredient.category}}, Qty: {{ingredient.qty}}
+    <li *ngFor="let ingredientsGroup of recipe.ingredientsGroupList">
+      Category:{{ingredientsGroup.name}}
+      <ul> 
+        <li *ngFor="let ingredient of ingredientsGroup.ingredients">
+          Ingredient:{{ingredient.ingredientsName}}, Unit: {{ingredient.unit}} Qty: {{ingredient.qty}}
+        </li>
+      </ul> 
     </li>
   </ul>
 </div>
